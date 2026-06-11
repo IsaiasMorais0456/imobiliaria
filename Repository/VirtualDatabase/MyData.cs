@@ -1,7 +1,7 @@
 ﻿using Imobiliaria.Models;
-using System.Net;
+using Model;
 
-namespace Imobiliaria.Repository.VirtualDatabase
+namespace Repository.VirtualDatabase
 {
     public static class MyData
     {

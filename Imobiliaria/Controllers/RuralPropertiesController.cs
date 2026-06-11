@@ -1,10 +1,11 @@
 ﻿using Imobiliaria.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Model;
 
 namespace Imobiliaria.Controllers
 {
-    public class RuralPropertiesControllercs : Controller
+    public class RuralPropertiesController : Controller
     {
         private static List<RuralProperty> _ruralProperties = new List<RuralProperty>();
 
@@ -14,11 +15,11 @@ namespace Imobiliaria.Controllers
 
             if(!string.IsNullOrEmpty(search))
             {
-                properties = _ruralProperties.GetByName(search);
+                //properties = _ruralProperties.GetByName(search);
             }
             else
             {
-                properties = _ruralProperties.GetAll();
+                //properties = _ruralProperties.GetAll();
             }
             return View(_ruralProperties);
         }
@@ -26,14 +27,14 @@ namespace Imobiliaria.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View(new RuralProperty);
+            return View(new RuralProperty());
         }
 
         [HttpPost]
         public IActionResult Create(RuralProperty property)
         {
             if (property is null) return View(property);
-            _ruralProperties.Create(property);
+            //_ruralProperties.Create(property);
 
            
             return RedirectToAction(nameof(Index));
@@ -43,17 +44,21 @@ namespace Imobiliaria.Controllers
         public IActionResult Delete(int id)
         {
             if (id <= 0) return BadRequest();
+            /*
             var property = _ruralProperties.GetById(id);
             if (property is null) return NotFound();
             return View(property);
+            */
+            return View();
         }
+
         [HttpPost]
         public IActionResult ConfirmDelete(int id)
         {
             if (id <= 0) return BadRequest();
-            var property = _ruralProperties.GetById(id);
+            //var property = _ruralProperties.GetById(id);
 
-            _ruralProperties.Delete(property);
+            //_ruralProperties.Delete(property);
             return RedirectToAction(nameof(Index));
         }
 
@@ -62,10 +67,10 @@ namespace Imobiliaria.Controllers
         public IActionResult Update(int id)
         {
             if(id <= 0) return BadRequest();
-            var property = _ruralProperties.GetById(id);
+            //var property = _ruralProperties.GetById(id);
 
-            if (property == null) return NotFound();
-            return View(property);
+            //if (property == null) return NotFound();
+            return View();
         }
 
         [HttpPost]
@@ -76,7 +81,7 @@ namespace Imobiliaria.Controllers
 
             if(id != property.Id) return BadRequest();
 
-            _ruralProperties.Update(property);
+            //_ruralProperties.Update(property);
 
             return RedirectToAction(nameof(Index));
         }

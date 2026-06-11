@@ -1,4 +1,4 @@
-﻿namespace Imobiliaria.Models
+﻿namespace Model
 {
     public class RuralProperty : Property 
     {
