@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860 [cite: 2]
+*@
+@model Model.RuralProperty
+
+@{
+    ViewData["Title"] = "Excluir Propriedade";
+}
+
+<div class="container mt-4">
+    <div class="alert alert-danger shadow-sm" role="alert">
+        <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> Atenção!</h4>
+        <p>Você tem certeza que deseja excluir permanentemente o imóvel <strong>@Model.Title</strong>?</p>
+        <hr>
+        <p class="mb-0">Esta ação não pode ser desfeita.</p>
+    </div>
+
+    <div class="card shadow-sm border-0 mt-4">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">Resumo da Propriedade</h5>
+        </div>
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-3">Localização</dt>
+                <dd class="col-sm-9">@Model.Location</dd>
+
+                <dt class="col-sm-3">Preço</dt>
+                <dd class="col-sm-9">@Model.Price.ToString("C")</dd>
+
+                <dt class="col-sm-3">Área (Hectares)</dt>
+                <dd class="col-sm-9">@Model.Hectares</dd>
+
+                <dt class="col-sm-3">Negócio</dt>
+                <dd class="col-sm-9">@Model.BusinessType.ToString()</dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-end py-3">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <a asp-action="Index" class="btn btn-secondary me-2">Cancelar</a>
+                <button type="submit" class="btn btn-danger">Sim, Excluir</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -32,6 +32,7 @@ namespace Imobiliaria.Repository
             _RuralProperty.Description = property.Description;
             _RuralProperty.BusinessType = property.BusinessType;
             _RuralProperty.Category = property.Category;
+            _RuralProperty.RoomSpecification = property.RoomSpecification;
 
         }
 
@@ -42,22 +43,14 @@ namespace Imobiliaria.Repository
             return RuralProperty;
         }
 
-        public List<RuralProperty> GetByName(string name)
+        public List<RuralProperty> GetByName(string title)
         {
             List<RuralProperty> RuralProperties = [];
 
-            foreach (var c in MyData.RuralProperties)
+            foreach (var r in MyData.RuralProperties)
             {
-                /*
-                if (c.FirstName.ToLower().Contains(name.ToLower()) ||
-                   c.LastName.ToLower().Contains(name.ToLower()))
-                {
-                    RuralPropertys.Add(c);
-                }
-                */
-
-                if (c.Title.ToLower().Contains(name.ToLower()))
-                    RuralProperties.Add(c);
+                if (r.Title.ToLower().Contains(title.ToLower()))
+                    RuralProperties.Add(r);
             }
 
             return RuralProperties;
