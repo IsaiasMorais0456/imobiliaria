@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Propriedades Rurais";
+    var currentSearch = Context.Request.Query["search"];
 }
 
 <div class="container mt-4">
@@ -11,6 +12,29 @@
             <i class="bi bi-plus-circle"></i> Adicionar Nova Propriedade
         </a>
     </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <form asp-action="Index" method="get">
+                <div class="input-group shadow-sm">
+                    <input type="text" name="search" class="form-control" placeholder="Buscar pelo título da propriedade..." value="@currentSearch">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="bi bi-search"></i> Buscar
+                    </button>
+                    @if (!string.IsNullOrEmpty(currentSearch))
+                    {
+                        <a asp-action="Index" class="btn btn-outline-secondary">Limpar</a>
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning shadow-sm" role="alert">
+            Nenhuma propriedade rural encontrada com os critérios de busca atuais.
+        </div>
+    }
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
         @foreach (var item in Model)
