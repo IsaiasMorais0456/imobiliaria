@@ -1,7 +1,6 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860 [cite: 2]
-*@
-@model Model.RuralProperty
+﻿
+
+@model Model.ResidentialProperty
 
 @{
     ViewData["Title"] = "Excluir Propriedade";
@@ -35,7 +34,7 @@
             </dl>
         </div>
         <div class="card-footer bg-white d-flex justify-content-end py-3">
-            <form method="post" asp-controller="RuralProperties" asp-action="ConfirmDelete">
+            <form method="post" asp-controller="ResidentialProperties" asp-action="ConfirmDelete">
                 <input type="hidden" asp-for="Id" />
                 <a asp-action="Index" class="btn btn-secondary me-2">Cancelar</a>
                 <button type="submit" class="btn btn-danger">Sim, Excluir</button>

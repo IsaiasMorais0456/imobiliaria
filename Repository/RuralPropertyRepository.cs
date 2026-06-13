@@ -1,5 +1,4 @@
 ﻿using System.Xml.Linq;
-using Imobiliaria.Models;
 using Model;
 using Repository;
 using Repository.VirtualDatabase;

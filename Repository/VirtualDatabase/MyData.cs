@@ -1,5 +1,4 @@
-﻿using Imobiliaria.Models;
-using Model;
+﻿using Model;
 
 namespace Repository.VirtualDatabase
 {

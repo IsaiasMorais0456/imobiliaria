@@ -11,8 +11,8 @@ namespace Repository
             {
                 case Type t when t == typeof(RuralProperty):
                     return GetNextRuralPropertyId();
-                //case Type t when t == typeof(property): //trocar para o comercial
-                //    return GetNextpropertyId();
+                case Type t when t == typeof(CommercialProperty): //trocar para o comercial
+                    return GetNextCommercialPropertyId();
                 //case Type t when t == typeof(Product): // trocar para o Residencial
                 //    return GetNextProductId();
                 default:
@@ -33,17 +33,17 @@ namespace Repository
             return ++maxId;
         }
 
-        //private int GetNextpropertyId() //Comercial
-        //{
+        private int GetNextCommercialPropertyId() //Comercial
+        {
 
-        //    int maxId = 0;
-        //    foreach (var property in MyData.propertys)
-        //    {
-        //        if (property.Id > maxId)
-        //            maxId = property.Id;
-        //    }
-        //    return ++maxId;
-        //}
+            int maxId = 0;
+            foreach (var property in MyData.Properties)
+            {
+                if (property.Id > maxId)
+                    maxId = property.Id;
+            }
+            return ++maxId;
+        }
 
         //private int GetNextProductId() //Residencial
         //{
