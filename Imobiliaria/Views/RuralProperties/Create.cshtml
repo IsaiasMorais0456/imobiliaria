@@ -10,7 +10,7 @@
             <h4 class="mb-0">Cadastrar Propriedade Rural</h4>
         </div>
         <div class="card-body">
-            <form asp-action="Create">
+            <form asp-action="Create" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label asp-for="Title" class="form-label">Título</label>
@@ -41,6 +41,11 @@
                     <div class="col-md-12 mb-3">
                         <label asp-for="RoomSpecification" class="form-label">Especificação de Cômodos</label>
                         <input asp-for="RoomSpecification" class="form-control" placeholder="Ex: 3 quartos, 1 sala..." />
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label font-weight-bold">Foto da Propriedade</label>
+                        <input type="file" name="imageFile" class="form-control" accept="image/*" />
+                        <div class="form-text">Formatos aceitos: JPG, PNG, JPEG.</div>
                     </div>
 
                     <hr class="my-4" />

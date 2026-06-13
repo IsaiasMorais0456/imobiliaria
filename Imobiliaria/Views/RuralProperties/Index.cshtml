@@ -41,6 +41,10 @@
         {
             <div class="col">
                 <div class="card h-100 shadow-sm border-0">
+                    <img src="@(string.IsNullOrEmpty(item.ImageUrl) ? "/assets/images/properties/default.jpg" : item.ImageUrl)" 
+                        class="card-img-top" 
+                        alt="@item.Title" 
+                        style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <h5 class="card-title text-primary">@item.Title</h5>

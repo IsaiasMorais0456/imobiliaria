@@ -22,5 +22,6 @@
         public decimal Price { get; set; } 
         public string? Location { get; set; }
         public string? RoomSpecification { get; set; }
+        public string? ImageUrl { get; set; } //Armazenar a URL da imagem
     }
 }

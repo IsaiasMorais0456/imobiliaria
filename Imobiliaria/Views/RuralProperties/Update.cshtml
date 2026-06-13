@@ -10,7 +10,7 @@
             <h4 class="mb-0 text-dark">Editar: @Model.Title</h4>
         </div>
         <div class="card-body">
-            <form method="post" asp-route-id="@Model.Id" asp-action="Update">
+            <form method="post" asp-route-id="@Model.Id" asp-action="Update" enctype="multipart/form-data">
                 <input type="hidden" asp-for="Id" />
 
                 <div class="row">
@@ -43,6 +43,19 @@
                     <div class="col-md-12 mb-3">
                         <label asp-for="RoomSpecification" class="form-label">Especificação de Cômodos</label>
                         <input asp-for="RoomSpecification" class="form-control" />
+                    </div>
+
+                    <div class="col-12 mb-4 text-center">
+                        <label class="form-label d-block text-secondary">Foto Atual do Imóvel</label>
+                        <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/assets/images/properties/default.jpg" : Model.ImageUrl)" 
+                             class="img-thumbnail shadow-sm" 
+                             style="max-height: 180px; object-fit: cover;" />
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Substituir Foto da Propriedade (Opcional)</label>
+                        <input type="file" name="imageFile" class="form-control" accept="image/*" />
+                        <div class="form-text">Deixe em branco se não quiser alterar a imagem atual.</div>
                     </div>
 
                     <hr class="my-4" />

@@ -23,7 +23,8 @@ namespace Repository.Seeds
                     RoomSpecification = "3 quartos, 2 banheiros, sala de estar e cozinha caipira com fogão a lenha",
                     Hectares = 12.5,
                     HasWaterSource = true,
-                    HasMainHouse = true
+                    HasMainHouse = true,
+                    ImageUrl = "/assets/images/ruralProperty/joao.jpg"
                 };
 
                 RuralProperty r2 = new RuralProperty
@@ -37,7 +38,8 @@ namespace Repository.Seeds
                     RoomSpecification = "2 quartos, 1 banheiro social, sala e cozinha integradas e varanda ampla",
                     Hectares = 3.8,
                     HasWaterSource = false,
-                    HasMainHouse = true
+                    HasMainHouse = true,
+                    ImageUrl = "/assets/images/ruralProperty/marcos.jpg"
                 };
 
                 RuralProperty r3 = new RuralProperty
@@ -51,7 +53,8 @@ namespace Repository.Seeds
                     RoomSpecification = "4 quartos, sendo 2 suítes, 3 banheiros, área de festas com churrasqueira e casa de ferramentas",
                     Hectares = 45.0,
                     HasWaterSource = true,
-                    HasMainHouse = true
+                    HasMainHouse = true,
+                    ImageUrl = "/assets/images/ruralProperty/isaias.jpg"
                 };
 
                 // Adicionando as propriedades criadas à base de dados virtual

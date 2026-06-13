@@ -32,6 +32,7 @@ namespace Imobiliaria.Repository
             _RuralProperty.BusinessType = property.BusinessType;
             _RuralProperty.Category = property.Category;
             _RuralProperty.RoomSpecification = property.RoomSpecification;
+            _RuralProperty.ImageUrl = property.ImageUrl; //adicionado para a imagem
 
         }
 
