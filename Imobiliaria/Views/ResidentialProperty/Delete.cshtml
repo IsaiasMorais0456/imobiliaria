@@ -35,7 +35,7 @@
             </dl>
         </div>
         <div class="card-footer bg-white d-flex justify-content-end py-3">
-            <form asp-action="Delete">
+            <form method="post" asp-controller="RuralProperties" asp-action="ConfirmDelete">
                 <input type="hidden" asp-for="Id" />
                 <a asp-action="Index" class="btn btn-secondary me-2">Cancelar</a>
                 <button type="submit" class="btn btn-danger">Sim, Excluir</button>

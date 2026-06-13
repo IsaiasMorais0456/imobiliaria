@@ -1,7 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860 [cite: 3]
-*@
-@model Model.RuralProperty
+﻿@model Model.RuralProperty
 
 @{
     ViewData["Title"] = "Editar Propriedade";
@@ -13,7 +10,7 @@
             <h4 class="mb-0 text-dark">Editar: @Model.Title</h4>
         </div>
         <div class="card-body">
-            <form asp-action="Update">
+            <form method="post" asp-route-id="@Model.Id" asp-action="Update">
                 <input type="hidden" asp-for="Id" />
 
                 <div class="row">
