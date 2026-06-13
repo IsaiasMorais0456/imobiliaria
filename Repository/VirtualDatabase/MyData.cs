@@ -5,6 +5,7 @@ namespace Repository.VirtualDatabase
     public static class MyData
     {
         public static List<Property> Properties = [];
+        public static List<ResidentialProperty> ResidentialProperties = [];
         public static List<CommercialProperty> CommercialProperties = [];
         public static List<RuralProperty> RuralProperties = [];
     }
